@@ -1,0 +1,113 @@
+.navbar {
+  width: 100%;
+  display: grid;
+  /* Tres columnas: Izquierda (Nombre), Centro (Links), Derecha (Idioma) */
+  grid-template-columns: 1fr auto 1fr; 
+  align-items: center;
+  padding: 30px 5%;
+  background: transparent;
+  z-index: 100;
+  position: relative;
+}
+
+/* El nombre o logo a la izquierda */
+.nav-logo {
+  justify-self: start;
+  color: #fff;
+  font-weight: 700;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+}
+
+.nav-links {
+  display: flex;
+  list-style: none;
+  gap: 30px;
+  margin: 0;
+  padding: 0;
+  justify-self: center; /* Mantiene los links siempre al centro */
+}
+
+.nav-links a {
+  color: #ffffff;
+  text-decoration: none;
+  font-size: 13px;
+  font-weight: 500;
+  letter-spacing: 1.5px;
+  text-transform: uppercase;
+  transition: all 0.3s ease;
+  position: relative;
+  padding-bottom: 5px;
+}
+
+.nav-links a:hover {
+  color: #e67e22;
+}
+
+.nav-links a::after {
+  content: '';
+  position: absolute;
+  width: 0;
+  height: 2px;
+  bottom: 0;
+  left: 0;
+  background-color: #e67e22;
+  transition: width 0.3s ease;
+}
+
+.nav-links a:hover::after {
+  width: 100%;
+}
+
+.lang-switch-container {
+  justify-self: end; /* Mueve el switch al final de la derecha */
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  color: white;
+  font-size: 12px;
+}
+
+/* Estilos del Switch (Optimizados) */
+.switch {
+  position: relative;
+  display: inline-block;
+  width: 40px;
+  height: 20px;
+}
+
+.switch input { opacity: 0; width: 0; height: 0; }
+
+.slider {
+  position: absolute;
+  cursor: pointer;
+  top: 0; left: 0; right: 0; bottom: 0;
+  background-color: #333;
+  transition: .4s;
+  border-radius: 34px;
+}
+
+.slider:before {
+  position: absolute;
+  content: "";
+  height: 14px; width: 14px;
+  left: 3px; bottom: 3px;
+  background-color: white;
+  transition: .4s;
+  border-radius: 50%;
+}
+
+input:checked + .slider { background-color: #e67e22; }
+input:checked + .slider:before { transform: translateX(20px); }
+
+/* Responsive: En móviles centramos todo en columna */
+@media (max-width: 768px) {
+  .navbar {
+    grid-template-columns: 1fr;
+    gap: 20px;
+    justify-items: center;
+  }
+  .nav-logo, .nav-links, .lang-switch-container {
+    justify-self: center;
+  }
+}

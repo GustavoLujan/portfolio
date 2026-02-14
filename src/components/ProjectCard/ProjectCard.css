@@ -1,0 +1,133 @@
+/* 1. CONTENEDOR DE LA GRILLA (2x2 achicado) */
+.projects-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  max-width: 900px; 
+  margin: 40px auto; 
+  padding: 0 20px;
+  gap: 30px;
+}
+
+/* 2. LA TARJETA */
+.card {
+  position: relative;
+  width: 100%;
+  padding: 0 !important;
+  background: #000;
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+  transition: all 0.3s ease;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: 4px;
+}
+
+/* 3. IMAGEN TOTAL */
+.image-container {
+  position: relative;
+  width: 100%;
+  aspect-ratio: 16 / 9;
+  overflow: hidden;
+}
+
+.image-container img {
+  width: 100% !important;
+  height: 100% !important;
+  object-fit: cover !important;
+  display: block;
+  filter: grayscale(100%);
+  transition: transform 0.8s cubic-bezier(0.16, 1, 0.3, 1), filter 0.5s ease;
+}
+
+/* 4. OVERLAY - CENTRADO DE ICONOS */
+.card-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.75);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  opacity: 0;
+  transition: opacity 0.3s ease;
+  z-index: 10;
+}
+
+/* AQUÍ EL CAMBIO: Iconos uno al lado del otro */
+.overlay-links {
+  display: flex;
+  flex-direction: row; /* Horizontal */
+  gap: 25px; /* Separación entre iconos */
+}
+
+.icon-link {
+  color: #ffffff;
+  background: #e67e22;
+  width: 45px;
+  height: 45px;
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  transition: 0.3s ease;
+  transform: translateY(15px);
+  text-decoration: none;
+}
+
+/* 5. HOVERS */
+.card:hover {
+  border-color: #e67e22;
+  transform: translateY(-5px);
+}
+
+.card:hover img {
+  transform: scale(1.05);
+  filter: grayscale(0%);
+}
+
+.card:hover .card-overlay {
+  opacity: 1;
+}
+
+.card:hover .icon-link {
+  transform: translateY(0);
+}
+
+.icon-link:hover {
+  background: #fff;
+  color: #e67e22;
+  transform: scale(1.1);
+}
+
+/* 6. INFO (TÍTULO) */
+.card-info {
+  padding: 25px 10px;
+  background: #0a0a0a;
+  text-align: center;
+}
+
+.card-info h3 {
+  font-size: 14px;
+  font-weight: 600;
+  margin: 0;
+  text-transform: uppercase;
+  letter-spacing: 3px;
+  color: #ffffff;
+}
+.projects-title {
+  text-align: center;
+  margin-bottom: 60px;
+  font-size: 1.8rem;
+  text-transform: uppercase;
+  letter-spacing: 4px;
+  color: #fff;
+}
+
+@media (max-width: 768px) {
+  .projects-grid {
+    grid-template-columns: 1fr;
+    max-width: 450px;
+  }
+}

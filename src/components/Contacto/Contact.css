@@ -1,0 +1,76 @@
+.contact-section {
+  background-color: #f2efed; /* Gris muy claro de la imagen */
+  padding: 100px 5%;
+  display: flex;
+  justify-content: center;
+}
+
+.contact-box {
+  background: transparent;
+  border: 2px solid white; /* El marco blanco sutil */
+  padding: 60px 40px;
+  width: 100%;
+  max-width: 900px;
+  text-align: center;
+}
+
+.contact-pretitle {
+  font-size: 0.9rem;
+  letter-spacing: 3px;
+  color: #333;
+  margin-bottom: 10px;
+}
+
+.contact-title {
+  font-size: 2rem;
+  color: #440e34; /* El púrpura de tus títulos */
+  letter-spacing: 2px;
+  margin-bottom: 50px;
+}
+
+.contact-links-container {
+  display: flex;
+  justify-content: center;
+  gap: 40px;
+  flex-wrap: wrap;
+}
+
+.contact-item {
+  text-decoration: none;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  transition: transform 0.3s ease;
+}
+
+.contact-item:hover {
+  transform: translateY(-5px);
+}
+
+.contact-icon {
+  width: 60px;
+  height: 60px;
+  background-color: white;
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: #440e34;
+  font-size: 1.5rem;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+  margin-bottom: 15px;
+  border: 1px solid rgba(68, 14, 52, 0.2);
+}
+
+.contact-item span {
+  color: #333;
+  font-size: 0.85rem;
+  font-weight: 500;
+}
+
+@media (max-width: 600px) {
+  .contact-links-container {
+    flex-direction: column;
+    gap: 30px;
+  }
+}

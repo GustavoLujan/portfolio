@@ -1,0 +1,73 @@
+.hero-section {
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  /* Degradado vino oscuro de fondo */
+  background: linear-gradient(135deg, #4b1a39 0%, #2d1b2d 100%);
+  padding: 40px;
+  box-sizing: border-box;
+}
+
+.hero-frame {
+  border: 2px solid white;
+  width: 100%;
+  max-width: 1000px;
+  height: 70vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+  padding: 20px;
+}
+
+/* Efecto de las líneas blancas extra en las esquinas */
+.hero-frame::before {
+  content: "";
+  position: absolute;
+  top: 10px;
+  left: 10px;
+  right: 10px;
+  bottom: 10px;
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  pointer-events: none;
+}
+
+.hero-content {
+  text-align: center;
+  z-index: 10;
+}
+
+.hero-name {
+  color: white;
+  font-size: clamp(1.8rem, 5vw, 4rem); /* Se ajusta al tamaño de pantalla */
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 4px;
+  margin-bottom: 25px;
+}
+
+.hero-badge {
+  background-color: #d35400; /* Naranja quemado/terracota */
+  padding: 12px 40px;
+  display: inline-block;
+  border-radius: 2px;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
+}
+
+.hero-role {
+  color: white;
+  font-size: clamp(0.8rem, 2vw, 1.2rem);
+  font-weight: 600;
+  letter-spacing: 3px;
+  text-transform: uppercase;
+  white-space: nowrap;
+}
+
+/* Ajuste para móviles */
+@media (max-width: 768px) {
+  .hero-frame {
+    height: 50vh;
+    padding: 10px;
+  }
+}
