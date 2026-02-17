@@ -11,17 +11,40 @@ body {
   background: linear-gradient(135deg, #2d0b26 0%, #5a1846 100%);
   color: #ffffff;
   min-height: 100vh;
+  overflow-x: hidden; 
 }
 
-/* Navbar Estilo Lucia/Gustavo */
+/* NAVBAR */
 .navbar {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: 30px 5%;
-  background: transparent;
+  padding: 20px 5%; 
+  background: #2d0b26; 
+  position: fixed;
+  top: 0;
+  width: 100%;
+  z-index: 1000;
+  height: 70px;
 }
 
+/* BOTÓN HAMBURGUESA (Oculto en PC) */
+.menu-toggle {
+  display: none;
+  flex-direction: column;
+  cursor: pointer;
+  gap: 5px;
+  z-index: 1100;
+}
+
+.menu-toggle .bar {
+  width: 25px;
+  height: 3px;
+  background-color: white;
+  transition: 0.3s;
+}
+
+/* LINKS (Escritorio) */
 .nav-links {
   display: flex;
   gap: 25px;
@@ -33,41 +56,31 @@ body {
   text-decoration: none;
   font-size: 13px;
   font-weight: 500;
+  text-transform: uppercase;
   transition: color 0.3s;
 }
 
-.nav-links a:hover {
-  color: #fff;
-  border-bottom: 2px solid #fff;
-}
-
-/* Switch de Idioma */
+/* SWITCH IDIOMA */
 .lang-switch-container {
   display: flex;
   align-items: center;
   gap: 10px;
+  z-index: 1100;
 }
 
 .switch {
   position: relative;
   display: inline-block;
-  width: 50px;
-  height: 24px;
+  width: 44px;
+  height: 22px;
 }
 
-.switch input {
-  opacity: 0;
-  width: 0;
-  height: 0;
-}
+.switch input { opacity: 0; width: 0; height: 0; }
 
 .slider {
   position: absolute;
   cursor: pointer;
-  top: 0;
-  left: 0;
-  right: 0;
-  bottom: 0;
+  top: 0; left: 0; right: 0; bottom: 0;
   background-color: #444;
   transition: .4s;
   border-radius: 34px;
@@ -76,115 +89,58 @@ body {
 .slider:before {
   position: absolute;
   content: "";
-  height: 16px;
-  width: 16px;
-  left: 4px;
-  bottom: 4px;
+  height: 16px; width: 16px;
+  left: 3px; bottom: 3px;
   background-color: white;
   transition: .4s;
   border-radius: 50%;
 }
 
-input:checked+.slider {
-  background-color: #d35400;
+input:checked + .slider { background-color: #d35400; }
+input:checked + .slider:before { transform: translateX(22px); }
+
+/* --- RESPONSIVE MÓVIL --- */
+@media (max-width: 768px) {
+  .menu-toggle {
+    display: flex; 
+  }
+
+  .nav-links {
+    position: fixed;
+    top: 0;
+    right: -100%; 
+    width: 80%;
+    height: 100vh;
+    background-color: #2d0b26;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 30px;
+    transition: 0.4s ease-in-out;
+    box-shadow: -10px 0 20px rgba(0,0,0,0.5);
+  }
+
+  .nav-links.active {
+    right: 0; 
+  }
+
+  /* Animación de la X */
+  .menu-toggle.open .bar:nth-child(1) { transform: translateY(8px) rotate(45deg); }
+  .menu-toggle.open .bar:nth-child(2) { opacity: 0; }
+  .menu-toggle.open .bar:nth-child(3) { transform: translateY(-8px) rotate(-45deg); }
+
+  /* Ajuste Hero para móvil */
+  .hero-box {
+    padding: 40px 20px;
+    width: 90%;
+  }
+  .hero-box h1 {
+    font-size: 1.8rem;
+    letter-spacing: 2px;
+  }
 }
 
-input:checked+.slider:before {
-  transform: translateX(26px);
-}
-
-/* Hero Section con el recuadro blanco */
-.hero {
-  height: 60vh;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  text-align: center;
-}
-
-.hero-box {
-  border: 4px solid #ffffff;
-  padding: 60px 80px;
-  position: relative;
-}
-
-.hero-box h1 {
-  font-size: 3.5rem;
-  letter-spacing: 5px;
-  margin-bottom: 20px;
-}
-
-.badge {
-  background-color: #e67e22;
-  color: #fff;
-  padding: 8px 30px;
-  font-size: 14px;
-  font-weight: bold;
-  position: absolute;
-  bottom: -15px;
-  left: 50%;
-  transform: translateX(-50%);
-  white-space: nowrap;
-}
-
-/* Grilla de Proyectos */
-.projects-section {
-  padding: 50px 5%;
-}
-
-.projects-section h2 {
-  margin-bottom: 30px;
-  font-size: 24px;
-  border-left: 5px solid #e67e22;
-  padding-left: 15px;
-}
-
-.grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-  gap: 20px;
-}
-
-.card {
-  background: #f0f0f0;
-  color: #333;
-  border-radius: 4px;
-  overflow: hidden;
-  transition: transform 0.3s;
-}
-
-.card:hover {
-  transform: translateY(-10px);
-}
-
-.card img {
-  width: 100%;
-  height: 200px;
-  object-fit: cover;
-}
-
-.card-body {
-  padding: 20px;
-}
-
-.card-body h3 {
-  font-size: 18px;
-  margin-bottom: 5px;
-  color: #000;
-}
-
-.card-body p {
-  font-size: 12px;
-  color: #666;
-  margin-bottom: 15px;
-}
-
-.btn-github {
-  display: inline-block;
-  background: #2d0b26;
-  color: #fff;
-  padding: 8px 15px;
-  text-decoration: none;
-  font-size: 12px;
-  border-radius: 3px;
+/* Estilos de secciones para que no queden tapadas por el navbar fixed */
+section {
+  padding-top: 100px;
 }

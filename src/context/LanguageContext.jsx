@@ -6,7 +6,7 @@ const translations = {
   es: {
     nav: ["INICIO", "SOBRE MI", "HERRAMIENTAS", "PROYECTOS", "CONTACTO"],
     hero_title: "HOLA! SOY GUSTAVO LUJÁN",
-    hero_subtitle: "DESARROLLADOR FRONT-END",
+    hero_subtitle: "DESARROLLADOR FULLSTACK",
     projects_label: "PROYECTOS",
     view_github: "VER GITHUB",
     // Sobre Mí

@@ -1,4 +1,3 @@
-/* 1. CONTENEDOR DE LA GRILLA (2x2 achicado) */
 .projects-grid {
   display: grid;
   grid-template-columns: repeat(2, 1fr);
@@ -8,7 +7,7 @@
   gap: 30px;
 }
 
-/* 2. LA TARJETA */
+
 .card {
   position: relative;
   width: 100%;
@@ -22,7 +21,7 @@
   border-radius: 4px;
 }
 
-/* 3. IMAGEN TOTAL */
+
 .image-container {
   position: relative;
   width: 100%;
@@ -39,7 +38,7 @@
   transition: transform 0.8s cubic-bezier(0.16, 1, 0.3, 1), filter 0.5s ease;
 }
 
-/* 4. OVERLAY - CENTRADO DE ICONOS */
+
 .card-overlay {
   position: absolute;
   top: 0;
@@ -55,11 +54,11 @@
   z-index: 10;
 }
 
-/* AQUÍ EL CAMBIO: Iconos uno al lado del otro */
+
 .overlay-links {
   display: flex;
-  flex-direction: row; /* Horizontal */
-  gap: 25px; /* Separación entre iconos */
+  flex-direction: row; 
+  gap: 25px; 
 }
 
 .icon-link {
@@ -76,7 +75,7 @@
   text-decoration: none;
 }
 
-/* 5. HOVERS */
+
 .card:hover {
   border-color: #e67e22;
   transform: translateY(-5px);
@@ -101,7 +100,7 @@
   transform: scale(1.1);
 }
 
-/* 6. INFO (TÍTULO) */
+
 .card-info {
   padding: 25px 10px;
   background: #0a0a0a;

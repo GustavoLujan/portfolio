@@ -67,7 +67,7 @@
 }
 
 .more-text.show {
-  max-height: 500px; /* Suficiente para el texto extra */
+  max-height: 500px; 
   opacity: 1;
   margin-bottom: 20px;
 }

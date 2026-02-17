@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react'; // ¿
 import { LanguageProvider, useLang } from './context/LanguageContext';
 import Hero from './components/Hero/Hero';
 import About from './components/About/About';
@@ -7,7 +7,7 @@ import ProjectCard from './components/ProjectCard/ProjectCard';
 import Contact from './components/Contacto/Contact';
 import Footer from './components/Footer/Footer';
 
-// Importación de imágenes
+
 import imgRhcp from './assets/rhcp.jpg';
 import imgCirse from './assets/cirse.jpg';
 import imgInmob from './assets/inmob.jpg';
@@ -18,6 +18,7 @@ import './components/ProjectCard/ProjectCard.css';
 
 const PortfolioContent = () => {
   const { t, toggleLang, lang } = useLang();
+  const [menuOpen, setMenuOpen] = useState(false);
 
   const projects = [
     { id: 1, title: "RHCPFAN", githubUrl: "https://github.com/GustavoLujan/rhcpfan", webUrl: "https://gustavolujan.github.io/rhcpfan/", img: imgRhcp },
@@ -28,14 +29,29 @@ const PortfolioContent = () => {
 
   return (
     <div className="app-wrapper">
-      {/* NAVBAR: Sin logo, sin 'Inicio' */}
       <nav className="navbar">
+        {/*  Botón Hamburguesa */}
+        <div 
+          className={`menu-toggle ${menuOpen ? 'open' : ''}`} 
+          onClick={() => setMenuOpen(!menuOpen)}
+        >
+          <span className="bar"></span>
+          <span className="bar"></span>
+          <span className="bar"></span>
+        </div>
+
         <div className="nav-empty-space"></div> 
 
-        <ul className="nav-links">
+        {/* 4. Clase dinámica 'active' para los links */}
+        <ul className={`nav-links ${menuOpen ? 'active' : ''}`}>
           {t.nav.slice(1).map((item, i) => (
             <li key={i}>
-              <a href={`#${item.toLowerCase().replace(/\s/g, "")}`}>{item}</a>
+              <a 
+                href={`#${item.toLowerCase().replace(/\s/g, "")}`}
+                onClick={() => setMenuOpen(false)} 
+              >
+                {item}
+              </a>
             </li>
           ))}
         </ul>
@@ -51,8 +67,8 @@ const PortfolioContent = () => {
       </nav>
 
       <Hero />
-      <About />
-      <Tools />
+      <div id="sobremi"><About /></div>
+      <div id="herramientas"><Tools /></div>
 
       <section className="projects-section" id="proyectos">
         <div className="container">
@@ -71,7 +87,7 @@ const PortfolioContent = () => {
         </div>
       </section>
 
-      <Contact />
+      <div id="contacto"><Contact /></div>
       <Footer />
     </div>
   );

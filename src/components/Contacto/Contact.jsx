@@ -4,24 +4,24 @@ import { FaWhatsapp, FaEnvelope, FaLinkedinIn } from 'react-icons/fa';
 import './Contact.css';
 
 const Contact = () => {
-  // Extraemos t (textos) y contactLinks (URLs) del Contexto
+ 
   const { t, contactLinks } = useLang();
 
-  // Mapeamos los datos combinando los iconos con las traducciones y links del contexto
+
   const socialLinks = [
     {
       icon: <FaWhatsapp />,
-      label: t.contact_whatsapp, // Usamos la traducción del context
+      label: t.contact_whatsapp, 
       url: contactLinks.whatsapp
     },
     {
       icon: <FaEnvelope />,
-      label: t.contact_email, // Usamos la traducción del context
+      label: t.contact_email, 
       url: contactLinks.email
     },
     {
       icon: <FaLinkedinIn />,
-      label: t.contact_linkedin, // Usamos la traducción del context
+      label: t.contact_linkedin, 
       url: contactLinks.linkedin
     }
   ];
@@ -29,7 +29,6 @@ const Contact = () => {
   return (
     <section className="contact-section" id="contacto">
       <div className="contact-box">
-        {/* Textos traducibles para el título y subtítulo */}
         <p className="contact-pretitle">{t.contact_subtitle}</p>
         <h2 className="contact-title">{t.contact_title}</h2>
         

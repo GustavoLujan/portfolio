@@ -21,7 +21,7 @@
   padding: 20px;
 }
 
-/* Efecto de las líneas blancas extra en las esquinas */
+
 .hero-frame::before {
   content: "";
   position: absolute;
@@ -40,7 +40,7 @@
 
 .hero-name {
   color: white;
-  font-size: clamp(1.8rem, 5vw, 4rem); /* Se ajusta al tamaño de pantalla */
+  font-size: clamp(1.8rem, 5vw, 4rem); 
   font-weight: 700;
   text-transform: uppercase;
   letter-spacing: 4px;
@@ -48,7 +48,7 @@
 }
 
 .hero-badge {
-  background-color: #d35400; /* Naranja quemado/terracota */
+  background-color: #d35400; 
   padding: 12px 40px;
   display: inline-block;
   border-radius: 2px;

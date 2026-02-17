@@ -10,13 +10,11 @@ const About = () => {
   return (
     <section className="about-section" id="sobremi">
       <div className="about-container">
-        {/* Lado Izquierdo: Imagen con marco naranja */}
         <div className="about-image-wrapper">
           <div className="orange-border"></div>
           <img src={miFoto} alt="Gustavo Luján" className="profile-photo" />
         </div>
 
-        {/* Lado Derecho: Contenido de texto */}
         <div className="about-content">
           <h2>{t.about_title}</h2>
           
@@ -24,12 +22,10 @@ const About = () => {
             <p>{t.about_p1}</p>
             <p>{t.about_p2}</p>
 
-            {/* Contenedor del texto extra que se despliega */}
             <div className={`more-text ${showMore ? 'show' : ''}`}>
               <p>{t.about_p3}</p>
             </div>
 
-            {/* Botón dinámico (Leer más / Leer menos) */}
             <button 
               className="read-more-btn" 
               onClick={() => setShowMore(!showMore)}
