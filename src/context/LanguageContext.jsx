@@ -28,7 +28,7 @@ const translations = {
   en: {
     nav: ["HOME", "ABOUT ME", "TOOLS", "PROJECTS", "CONTACT"],
     hero_title: "HELLO! I'M GUSTAVO LUJÁN",
-    hero_subtitle: "FRONT-END DEVELOPER",
+    hero_subtitle: "FULLSTACK DEVELOPER",
     projects_label: "PROJECTS",
     view_github: "VIEW GITHUB",
     // About Me
