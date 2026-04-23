@@ -10,7 +10,7 @@ import Footer from './components/Footer/Footer';
 
 import imgRhcp from './assets/rhcp.jpg';
 import imgCirse from './assets/cirse.jpg';
-import imgInmob from './assets/inmob.jpg';
+import imgPsc from './assets/psc.png';
 import imgMovie from './assets/movie.jpg';
 
 import './index.css';
@@ -23,7 +23,7 @@ const PortfolioContent = () => {
   const projects = [
     { id: 1, title: "RHCPFAN", githubUrl: "https://github.com/GustavoLujan/rhcpfan", webUrl: "https://gustavolujan.github.io/rhcpfan/", img: imgRhcp },
     { id: 2, title: "CIRSE CLOTHES", githubUrl: "https://github.com/GustavoLujan/cirse-clothes", webUrl: "https://gustavolujan.github.io/cirse-clothes/", img: imgCirse },
-    { id: 3, title: "INMOBILIARIA BROWN", githubUrl: "https://github.com/GustavoLujan/inmob-brown", webUrl: "https://gustavolujan.github.io/inmob-brown/", img: imgInmob },
+    { id: 3, title: "PSCINDUMENTARIA", githubUrl: "https://www.pscindumentaria.com.ar/", webUrl: "https://github.com/GustavoLujan/pscindumentaria.git", img: imgPsc },
     { id: 4, title: "MOVIE DEST", githubUrl: "https://github.com/GustavoLujan/moviedest", webUrl: "https://gustavolujan.github.io/moviedest/", img: imgMovie }
   ];
 
