@@ -23,7 +23,7 @@ const PortfolioContent = () => {
   const projects = [
     { id: 1, title: "RHCPFAN", githubUrl: "https://github.com/GustavoLujan/rhcpfan", webUrl: "https://gustavolujan.github.io/rhcpfan/", img: imgRhcp },
     { id: 2, title: "CIRSE CLOTHES", githubUrl: "https://github.com/GustavoLujan/cirse-clothes", webUrl: "https://gustavolujan.github.io/cirse-clothes/", img: imgCirse },
-    { id: 3, title: "PSCINDUMENTARIA", githubUrl: "https://www.pscindumentaria.com.ar/", webUrl: "https://github.com/GustavoLujan/pscindumentaria.git", img: imgPsc },
+    { id: 3, title: "PSCINDUMENTARIA", githubUrl: "https://github.com/GustavoLujan/pscindumentaria.git", webUrl: "https://pscindumentaria.com.ar", img: imgPsc },
     { id: 4, title: "MOVIE DEST", githubUrl: "https://github.com/GustavoLujan/moviedest", webUrl: "https://gustavolujan.github.io/moviedest/", img: imgMovie }
   ];
 
