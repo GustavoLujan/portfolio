@@ -9,7 +9,7 @@ const Tools = () => {
     { name: "HTML5", icon: "https://cdn.worldvectorlogo.com/logos/html-1.svg" },
     { name: "CSS3", icon: "https://cdn.worldvectorlogo.com/logos/css-3.svg" },
     { name: "JavaScript", icon: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/javascript/javascript-original.svg" }, 
-    { name: "React JS", icon: "https://cdn.worldvectorlogo.com/logos/react-2.svg" },
+    { name: "React JS", icon: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/react/react-original.svg" },
     { name: "Next JS", icon: "https://cdn.worldvectorlogo.com/logos/next-js.svg" },
     { name: "Vite", icon: "https://cdn.worldvectorlogo.com/logos/vitejs.svg" },
     { name: "Redux", icon: "https://cdn.worldvectorlogo.com/logos/redux.svg" },

@@ -1,7 +1,7 @@
 import React from 'react';
 import './ProjectCard.css';
 
-const ProjectCard = ({ title, image, githubUrl, webUrl }) => {
+const ProjectCard = ({ title, image, githubUrl, webUrl, description, tech }) => {
   return (
     <div className="card">
       <div className="image-container">
@@ -26,6 +26,12 @@ const ProjectCard = ({ title, image, githubUrl, webUrl }) => {
       </div>
       <div className="card-info">
         <h3>{title}</h3>
+        {description && <p className="card-description">{description}</p>}
+        {tech && tech.length > 0 && (
+          <div className="card-tech">
+            {tech.map((t, i) => <span key={i} className="tech-tag">{t}</span>)}
+          </div>
+        )}
       </div>
     </div>
   );

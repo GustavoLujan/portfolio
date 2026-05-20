@@ -102,9 +102,12 @@
 
 
 .card-info {
-  padding: 25px 10px;
+  padding: 20px 16px;
   background: #0a0a0a;
   text-align: center;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
 }
 
 .card-info h3 {
@@ -114,6 +117,32 @@
   text-transform: uppercase;
   letter-spacing: 3px;
   color: #ffffff;
+}
+
+.card-description {
+  font-size: 12px;
+  color: rgba(255, 255, 255, 0.55);
+  line-height: 1.6;
+  margin: 0;
+}
+
+.card-tech {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 6px;
+  margin-top: 2px;
+}
+
+.tech-tag {
+  font-size: 10px;
+  font-weight: 600;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  color: #e67e22;
+  border: 1px solid rgba(230, 126, 34, 0.4);
+  padding: 3px 8px;
+  border-radius: 2px;
 }
 .projects-title {
   text-align: center;
