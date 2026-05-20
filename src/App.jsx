@@ -25,7 +25,7 @@ const PortfolioContent = () => {
       id: 1,
       title: "COMMERCE AI HUB",
       githubUrl: "https://github.com/GustavoLujan/commerce-ai-hub",
-      webUrl: "https://github.com/GustavoLujan/commerce-ai-hub",
+      webUrl: "https://gustavolujan.github.io/commerce-ai-hub/",
       img: imgCommerceAI,
       descEs: "Plataforma de BI para retail con dashboard de KPIs en tiempo real, análisis de ventas por región y chat de IA con Claude.",
       descEn: "Retail BI platform with real-time KPI dashboard, regional sales analysis, and AI chat powered by Claude.",
